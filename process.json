@@ -1,0 +1,28 @@
+{
+  "apps": [
+    {
+      "name": "api-server",
+      "script": "src/app.js",
+      "instances": 0,
+      "instance_var": "INSTANCE_ID",
+      "exec_mode": "cluster",
+      "watch": false,
+      "env": {
+        "NODE_ENV": "local",
+        "PORT": "8080"
+      },
+      "env_production": {
+        "NODE_ENV": "production",
+        "PORT": "8080"
+      },
+      "env_local": {
+        "NODE_ENV": "local",
+        "PORT": "8080"
+      },
+      "node_args": "",
+      "log_date_format": "YYYY-MM-DD HH:mm:ss Z",
+      "max_restarts": 3,
+      "merge_logs": true
+    }
+  ]
+}
