@@ -2,7 +2,7 @@ const BaseService = require('../common/base_service');
 const LogicError = require('../common/logic_error');
 const _ = require('lodash');
 
-const {CandidateModal, ActivityModal, UserVotedModal } = require('../model/index');
+const { CandidateModal, ActivityModal, UserVotedModal } = require('../model/index');
 
 /**
  *  用户管理相关
@@ -96,6 +96,7 @@ class Service extends BaseService {
   /**
    * 修改票选活动
    * @param  data  Object
+   * @return result Array
    */
   async list(data) {
     let findOption = {};
@@ -107,6 +108,7 @@ class Service extends BaseService {
   /**
    * 票选活动详情
    * @param  activityId  String
+   * @return activity Object
    */
   async activityDetail(activityId) {
     let activity = await ActivityModal.findOne({ _id: activityId });
@@ -156,7 +158,7 @@ class Service extends BaseService {
 
     // 开始投票
     for (let i = 0; i < data.candidateArr.length; i++) {
-      await CandidateModal.findOneAndUpdate({ _id: data.candidateArr[i] }, { $inc: { count: numberArr[i] } });
+      await CandidateModal.findOneAndUpdate({ _id: data.candidateArr[i] }, { $inc: { count: numberArr[i] }});
     }
 
     // 创建投票记录

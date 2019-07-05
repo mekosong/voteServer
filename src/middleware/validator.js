@@ -6,19 +6,21 @@ function validate(validations, obj) {
 
   const errors = [];
   for (const name in validations) {
-    const fn = validations[name];
+    if (obj.hasOwnProperty(name)) {
+      const fn = validations[name];
 
-    if (!fn) throw new TypeError(`必须为参数${name}提供验证程序！`);
-    if (typeof fn !== 'function') throw new TypeError(`参数${name}验证程序必须为方法！`);
+      if (!fn) throw new TypeError(`必须为参数${name}提供验证程序！`);
+      if (typeof fn !== 'function') throw new TypeError(`参数${name}验证程序必须为方法！`);
 
-    const validator = new Validator(name, obj[name]);
-    fn(validator);
+      const validator = new Validator(name, obj[name]);
+      fn(validator);
 
-    if (validator.errors.length > 0) {
-      errors.push({
-        name,
-        message: validator.errors.join(',')
-      });
+      if (validator.errors.length > 0) {
+        errors.push({
+          name,
+          message: validator.errors.join(',')
+        });
+      }
     }
   }
 

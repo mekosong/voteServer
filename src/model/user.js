@@ -10,18 +10,18 @@ const {
 } = mongoose;
 const crypto = require('crypto');
 const s = new Schema({
-  //用户邮箱
+  // 用户邮箱
   email: {
     type: String,
     required: true,
     unique: true
   },
-  //true为内部员工，
+  // true为内部员工，
   isWorker: {
     type: Boolean,
     default: false
   },
-  //用户密码
+  // 用户密码
   password: {
     type: String,
     required: true
@@ -30,12 +30,7 @@ const s = new Schema({
   verifyEmail: {
     type: Boolean,
     default: false
-  },
-  // 参与过投票的选票活动
-  votedActivity: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Activity'
-  }]
+  }
 });
 
 

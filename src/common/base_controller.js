@@ -1,6 +1,6 @@
 const BaseClass = require('./base_class');
 const LogicError = require('./logic_error');
-const { UserModal, UserVotedModal } = require('../model/index');
+const { UserModal } = require('../model/index');
 
 module.exports = class BaseController extends BaseClass {
 

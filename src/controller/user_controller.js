@@ -56,9 +56,9 @@ class UserController extends BaseController {
   }
 
   /**
-   * 用户注册
-   * body.email 注册的邮箱
-   * body.password 邮箱的验证码
+   * 用户登录
+   * body.email  用户的邮箱
+   * body.password  用户的密码
    * */
   async signIn(ctx) {
     ctx.validate({
@@ -66,8 +66,8 @@ class UserController extends BaseController {
       password: v => v.required().min(6)
     }, ctx.request.body);
 
-    const token = await UserService.signIn(ctx.request.body);
-    ctx.body = ResultPair.ok({ token });
+    const data = await UserService.signIn(ctx.request.body);
+    ctx.body = ResultPair.ok(data);
   }
 
   /**

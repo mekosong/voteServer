@@ -21,7 +21,6 @@ class UserService extends BaseService {
   }
 
 
-
   /**
    * 新增用户
    * @param  userData  Object
@@ -44,7 +43,7 @@ class UserService extends BaseService {
   }
 
   /**
-   * 新增用户
+   * 用户登录
    * @param  userData  Object
    * @return userToken String
    */
@@ -58,7 +57,12 @@ class UserService extends BaseService {
       email: user.email,
       isWorker: user.isWorker
     });
-    return token;
+    return {
+      token,
+      isWorker: user.isWorker,
+      verifyEmail: user.verifyEmail,
+      id: user._id
+    };
   }
 
   /**

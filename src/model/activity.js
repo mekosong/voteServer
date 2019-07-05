@@ -5,7 +5,7 @@ const {
   Schema
 } = mongoose;
 const s = new Schema({
-  //选票活动的标题
+  // 选票活动的标题
   title: {
     type: String,
     unique: true

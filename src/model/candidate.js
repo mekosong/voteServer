@@ -9,12 +9,12 @@ const {
   Schema
 } = mongoose;
 const s = new Schema({
-  //名字
+  // 名字
   name: {
     type: String,
     required: true,
   },
-  //性别,M：男，F：女
+  // 性别,M：男，F：女
   sex: {
     type: String,
     enum: ['M', 'F'],

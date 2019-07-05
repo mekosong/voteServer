@@ -6,7 +6,7 @@ const { UserModal } = require('../src/model');
 
 (async function () {
   let workerUser = {
-    email: 'admin@admin.cn',
+    email: 'admin1@admin.cn',
     password: 'admin321',
     verifyEmail: true,
     isWorker: true

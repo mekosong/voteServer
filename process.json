@@ -11,18 +11,35 @@
         "NODE_ENV": "local",
         "PORT": "8080"
       },
-      "env_production": {
-        "NODE_ENV": "production",
-        "PORT": "8080"
-      },
       "env_local": {
         "NODE_ENV": "local",
+        "PORT": "8080"
+      },
+      "env_production": {
+        "NODE_ENV": "production",
         "PORT": "8080"
       },
       "node_args": "",
       "log_date_format": "YYYY-MM-DD HH:mm:ss Z",
       "max_restarts": 3,
       "merge_logs": true
+    },
+    {
+      "name": "vote-schedule",
+      "script": "schedule",
+      "watch": false,
+      "env": {
+        "NODE_ENV": "local"
+      },
+      "env_local": {
+        "NODE_ENV": "local"
+      },
+      "env_production": {
+        "NODE_ENV": "production"
+      },
+      "node_args": "",
+      "log_date_format": "YYYY-MM-DD HH:mm:ss Z",
+      "max_restarts": 3
     }
   ]
 }
