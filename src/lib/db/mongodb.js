@@ -39,8 +39,7 @@ dbModal.on('error', function (err) {
 
 // 断开链接触发
 dbModal.on('disconnected', function () {
-  console.log('Mongoose default connection disconnected');
-  process.exit(0);
+  console.log('Mongoose disconnected');
 });
 
 
