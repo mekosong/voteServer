@@ -7,4 +7,6 @@ yarn-error.log
 *.zip
 src.zip
 src/config/local/*
+!src/config/local/README.md
 src/config/production/*
+!src/config/production/README.md
