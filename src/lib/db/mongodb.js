@@ -1,4 +1,3 @@
-const Promise = require('bluebird');
 const mongoose = require('mongoose');
 const config = require('../../config/index');
 mongoose.Promise = Promise;

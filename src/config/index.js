@@ -26,8 +26,9 @@ function loadFolderConfig(folder) {
     if (fileName === 'README.md') {
       return;
     }
-    let fileData = fs.readFileSync(path.join(__dirname, folder, fileName), 'utf8');
-    config[fileName] = JSON.parse(fileData);
+    let filePath = `./${folder}/${fileName}`;
+    const baseName = fileName.split('.')[0];
+    config[baseName] = require(filePath);
   });
 }
 
